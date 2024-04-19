@@ -1,0 +1,303 @@
+$footer-bg: black;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  text-align: center;
+  color: hsl(233, 8%, 62%);
+  background-color: hsl(0, 0%, 98%);
+  line-height: 2rem;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  font-size: 3rem;
+  margin: 1em 0;
+  line-height: 3rem;
+}
+
+%inviteLink {
+  display: inline-block;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 40px;
+  margin: 1em 0;
+  background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.easyBank--nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+ 
+  .large--screen--nav {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+  }
+
+  &--head {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+
+  &--links {
+    
+    li {
+        list-style-type: none;
+    }
+  }
+
+  &--invite {
+    @extend %inviteLink;
+    margin: 0;
+
+    a {
+        color: #FFFFFF;
+    }
+  }
+}
+
+
+.easyBank--header {
+  background-color: white;
+  text-align: right;
+  a {
+    @extend %inviteLink;
+  }
+
+  img {
+    object-position: 90px -70px;
+    width: 400px;
+    height: 400px;
+    background-image: url(/images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--content {
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+.easyBank--services {
+  padding: 2rem;
+
+  section {
+    margin: 2rem 0;
+  }
+
+  &--list {
+    text-align: left;
+  }
+}
+
+.easyBank--articles {
+  h2 {
+    text-align: center;
+  }
+
+  text-align: left;
+  padding: 2rem;
+
+  figcaption,
+  h4,
+  p {
+    padding: 0 1rem;
+  }
+
+  a {
+    font-size: 1.5rem;
+  }
+
+  article {
+    background-color: white;
+    margin: 2rem 0;
+    border-radius: 10px;
+  }
+}
+
+.footer {
+  background-color: $footer-bg;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+
+  &--socials {
+    a > img {
+      display: inline;
+    }
+
+    &--links {
+      margin: 1rem 0;
+
+      a > img {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  &--info,
+  &--policy {
+    a {
+      display: block;
+      margin: 1.5rem 0;
+    }
+  }
+
+  &--invite {
+    a {
+      @extend %inviteLink;
+    }
+  }
+}
+
+@media screen and (max-width: 767Px) {
+    
+    .easyBank--nav {
+        .mobile--nav {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            right: 30px;
+            text-align: center;
+            background-color: #FFFFFF;
+            padding: 2rem 7rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            z-index: 1000;
+
+            li {
+                margin-bottom: 1rem;
+            }
+        }
+        .large--screen--nav {
+            display: none;
+          }
+
+          &--invite {
+            display: none;
+          }
+    }
+
+    .easyBank--header {
+        img {
+            display: inline-block;
+        }
+
+        &--content {
+            margin-top: -8rem;
+        }
+    }
+
+    .easyBank--services--list {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+  .easyBank--nav {
+
+    .mobile--nav {
+      display: none;
+    }
+
+    &--head--toggle {
+      display: none;
+    }
+
+    &--invite {
+        display: block;
+    }
+  }
+
+  .easyBank--header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    img {
+        background-image: url(/images/bg-intro-desktop.svg);
+    }
+    &--content {
+        text-align: left;
+        width: 40%;
+        align-self: center;
+    }
+  }
+
+  .easyBank--services--header {
+    text-align: left;
+    width: 40vw;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  
+  .easyBank--services--list {
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   column-gap: 6rem;
+  }
+
+}
+
+@media screen and (max-width: 899px) {
+    .easyBank--articles--lists{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        column-gap: 2rem;
+      }
+}
+
+@media screen  and (min-width:900px){
+    .easyBank--articles--lists{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        column-gap: 2rem;
+      }
+}
+
