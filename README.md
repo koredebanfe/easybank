@@ -1,5 +1,7 @@
 # Frontend Mentor - Easybank landing page
 
+[EasayBank Landing Page Hosted Link](https://koredebanfe.github.io/easybank/)
+
 ![Design preview for the Easybank landing page coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
